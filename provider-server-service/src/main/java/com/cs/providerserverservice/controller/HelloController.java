@@ -1,4 +1,4 @@
-package com.cs.provider.server.controller;
+package com.cs.providerserverservice.controller;
 
 import com.cs.common.vo.Hello;
 import org.springframework.web.bind.annotation.PostMapping;

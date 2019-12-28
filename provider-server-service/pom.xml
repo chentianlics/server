@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.cs</groupId>
-        <artifactId>server</artifactId>
+        <artifactId>provider-server-service-root</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.cs</groupId>
-    <artifactId>provider</artifactId>
+    <artifactId>provider-server-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>provider</name>
     <description>Demo project for Spring Boot</description>
@@ -27,7 +27,7 @@
         <!--common-->
         <dependency>
             <groupId>com.cs</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>provider-common-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
