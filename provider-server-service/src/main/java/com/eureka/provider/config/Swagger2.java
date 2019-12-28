@@ -1,4 +1,4 @@
-package com.cs.providerserverservice.config;
+package com.eureka.provider.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +32,7 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .enable(swaggerEnabled)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.cs.providerserverservice"))
+                .apis(RequestHandlerSelectors.basePackage("com.eureka.provider.controller"))
                 .paths(PathSelectors.any())
                 .build().pathMapping("/");
     }

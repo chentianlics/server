@@ -9,9 +9,9 @@
     </parent>
 
     <groupId>com.cs</groupId>
-    <artifactId>provider-server-service</artifactId>
+    <artifactId>provider-client-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>provider-server-service</name>
+    <name>provider-client-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,38 +19,27 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!--common-->
         <dependency>
             <groupId>com.cs</groupId>
             <artifactId>provider-common-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <!--openfeign-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>
