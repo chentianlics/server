@@ -8,9 +8,42 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:9999/eureka  ## 注册到 eureka
 spring:
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: provider-server-service  ## 应用程序名称，后面会在消费者中用到
 
 #config swagger
 swagger:
   enabled: true
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.eureka.provider.model
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#log
+logging:
+  path: data/log
+  level:
+    com:
+      ebaiyihui:
+        service:
+          referral:
+            server:
+              mapper: debug
+  config: classpath:logback-spring.xml
+
+#mybatis-plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #打印sql执行
+  global-config:
+    db-config:
+      id-type: auto  #设置主键为自增
+  mapper-locations: classpath:/mapper/*Mapper.xml

@@ -32,7 +32,7 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .enable(swaggerEnabled)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.eureka.provider.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.eureka.provider.gener.controller"))
                 .paths(PathSelectors.any())
                 .build().pathMapping("/");
     }
