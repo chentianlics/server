@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eureka.provider.gener.mapper.ERoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.eureka.provider.gener.entity.ERole" >
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="status" property="status" />
+        <result column="create_date" property="createDate" />
+        <result column="update_date" property="updateDate" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id,
+                name,
+                status,
+                create_date,
+                update_date
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.eureka.provider.gener.entity.ERole">
+        INSERT INTO e_role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != name'>
+                name,
+            </if>
+            <if test ='null != status'>
+                status,
+            </if>
+            <if test ='null != createDate'>
+                create_date,
+            </if>
+            <if test ='null != updateDate'>
+                update_date
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != name'>
+                #{name},
+            </if>
+            <if test ='null != status'>
+                #{status},
+            </if>
+            <if test ='null != createDate'>
+                #{createDate},
+            </if>
+            <if test ='null != updateDate'>
+                #{updateDate}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM e_role
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.eureka.provider.gener.entity.ERole">
+        UPDATE e_role
+        <set>
+            <if test ='null != name'>name = #{name},</if>
+            <if test ='null != status'>status = #{status},</if>
+            <if test ='null != createDate'>create_date = #{createDate},</if>
+            <if test ='null != updateDate'>update_date = #{updateDate}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM e_role
+        WHERE id = #{id}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM e_role
+    </select>
+
+</mapper>
